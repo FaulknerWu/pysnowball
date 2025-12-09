@@ -1653,6 +1653,81 @@ ball.watch_stock(-1)
 }
 ```
 
+### user 用户动态
+
+获取指定用户的动态/文章
+
+```python
+import pysnowball as ball
+ball.user_timeline('1247347556')  # 获取全部动态
+ball.user_timeline('1247347556', type=0)  # 原发布
+ball.user_timeline('1247347556', type=2)  # 长文
+ball.user_timeline('1247347556', type=9)  # 热门
+```
+
+输入参数：
+
+* user_id -> 用户ID
+* page -> 页码，默认1
+* count -> 每页数量，默认20
+* type -> 类型过滤：None=全部, 0=原发布, 2=长文, 9=热门
+* source -> 买卖=交易tag的帖子
+
+结果显示：
+
+```json
+{
+    "statuses": [
+        {
+            "id": 135975494,
+            "user_id": 1247347556,
+            "title": "限量版。",
+            "text": "...",
+            "created_at": 1574137362000,
+            "timeBefore": "2019-11-19 12:22",
+            "reply_count": 13,
+            "like_count": 487,
+            "retweet_count": 21,
+            "target": "/1247347556/135975494"
+        }
+    ],
+    "page": 1,
+    "maxPage": 10
+}
+```
+
+### user 用户收藏
+
+获取指定用户的收藏文章
+
+```python
+import pysnowball as ball
+ball.user_favorites('1247347556')
+ball.user_favorites('1247347556', size=50)
+```
+
+输入参数：
+
+* user_id -> 用户ID
+* size -> 返回数量，默认20
+
+结果显示：
+
+```json
+{
+    "items": [
+        {
+            "id": 351044510,
+            "title": "",
+            "text": "...",
+            "timeBefore": "09-04 23:03"
+        }
+    ],
+    "next_id": -1,
+    "next_max_id": -1
+}
+```
+
 ### cube 组合净值
 
 ```python
