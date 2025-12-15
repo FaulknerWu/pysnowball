@@ -52,6 +52,7 @@ kline = "https://stock.xueqiu.com/v5/stock/chart/kline.json?symbol={}&begin={}&p
 watch_list = "https://stock.xueqiu.com/v5/stock/portfolio/list.json?system=true"
 watch_stock = "https://stock.xueqiu.com/v5/stock/portfolio/stock/list.json?size=1000&category=1&pid="
 user_timeline_url = "https://xueqiu.com/statuses/user_timeline.json?user_id={}&page={}&count={}"
+home_timeline_url = "https://xueqiu.com/statuses/home_timeline.json?source={}&page={}&count={}"
 user_favorites_url = "https://xueqiu.com/statuses/favorites.json?user_id={}&size={}"
 
 # cube

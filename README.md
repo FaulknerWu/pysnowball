@@ -1677,22 +1677,25 @@ ball.user_timeline('1247347556', type=9)  # 热门
 
 ```json
 {
+    "total": 4,
+    "count": 2,
     "statuses": [
         {
-            "id": 135975494,
+            "id": 366022098,
             "user_id": 1247347556,
-            "title": "限量版。",
-            "text": "...",
-            "created_at": 1574137362000,
-            "timeBefore": "2019-11-19 12:22",
-            "reply_count": 13,
-            "like_count": 487,
+            "source": "iPad",
+            "title": "",
+            "created_at": 1765769740000,
             "retweet_count": 21,
-            "target": "/1247347556/135975494"
+            "fav_count": 51,
+            "description": "...",
+            "user": {
+                "screen_name": "大道无形我有型",
+                ...
+            },
+            ...
         }
-    ],
-    "page": 1,
-    "maxPage": 10
+    ]
 }
 ```
 
@@ -1718,14 +1721,58 @@ ball.user_favorites('1247347556', size=50)
     "items": [
         {
             "id": 351044510,
+            "user_id": 8689584849,
+            "source": "iPhone",
             "title": "",
-            "text": "...",
-            "timeBefore": "09-04 23:03"
+            "created_at": 1756998212000,
+            "retweet_count": 0,
+            "fav_count": 9,
+            "description": "...",
+            "user": {
+                "screen_name": "李妍",
+                ...
+            },
+            ...
         }
     ],
     "next_id": -1,
     "next_max_id": -1
 }
+```
+
+### user 关注动态
+
+获取当前登录用户关注的人发布的最新动态
+
+```python
+import pysnowball as ball
+ball.home_timeline()  # 默认参数
+ball.home_timeline(source="user", page=1, count=20)
+```
+
+输入参数：
+
+* source -> 来源类型，默认"user"
+* page -> 页码，默认1
+* count -> 每页数量，默认20
+
+结果显示：
+
+```json
+[
+    {
+        "id": 366038109,
+        "user_id": 5124430882,
+        "source": "雪球",
+        "description": "...",
+        "created_at": 1765776240000,
+        "user": {
+            "screen_name": "7X24快讯",
+            ...
+        },
+        ...
+    }
+]
 ```
 
 ### cube 组合净值
